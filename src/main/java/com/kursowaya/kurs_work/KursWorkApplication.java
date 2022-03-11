@@ -7,9 +7,7 @@ import javax.servlet.annotation.WebServlet;
 
 @SpringBootApplication
 public class KursWorkApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(KursWorkApplication.class, args);
     }
-
 }
