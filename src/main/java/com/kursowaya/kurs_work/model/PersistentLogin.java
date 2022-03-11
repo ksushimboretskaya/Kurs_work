@@ -3,6 +3,7 @@ package com.kursowaya.kurs_work.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.web.authentication.rememberme.PersistentRememberMeToken;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -26,4 +27,11 @@ public class PersistentLogin {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="last_used",nullable=false)
     private Date date;
+
+    public PersistentLogin(PersistentRememberMeToken token){
+        this.series = token.getSeries();
+        this.username = token.getUsername();
+        this.token = token.getTokenValue();
+        this.date = token.getDate();
+    }
 }

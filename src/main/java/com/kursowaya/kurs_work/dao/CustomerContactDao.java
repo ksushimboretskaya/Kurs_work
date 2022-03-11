@@ -6,5 +6,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomerContactDao extends CrudRepository<CustomerContact, Long>, PagingAndSortingRepository<CustomerContact, Long> {
+public interface CustomerContactDao extends CrudRepository<CustomerContact, Long>,
+        PagingAndSortingRepository<CustomerContact, Long> {
+    void delete(long customerContactId);
 }

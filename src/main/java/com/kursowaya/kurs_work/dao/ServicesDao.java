@@ -19,5 +19,9 @@ public interface ServicesDao extends CrudRepository<Services, Long>, PagingAndSo
 
     @Query("SELECT t FROM Services t WHERE t.servicesCategory = :searchTerm OR t.servicesName LIKE %:searchTerm% " +
             " OR   t.servicesCost LIKE %:searchTerm%")
-    Page<Services> findAllProductByNameOrCostOrCategory(@Param("searchTerm") String searchTerm, Pageable pageable);
+    Page<Services> findAllServicesByNameOrCostOrCategory(@Param("searchTerm") String searchTerm, Pageable pageable);
+
+    Services findOne(long productId);
+
+    void delete(long servicesId);
 }
